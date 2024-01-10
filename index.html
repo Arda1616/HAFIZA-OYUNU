@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="script.js" async></script>
+    <title>Mix-Or-Match</title>
+  </head>
+  <body>
+    <!-- <h1 class="page-title">Hafıza Oyunu</h1> -->
+    <div id="baslik" class="overlay-text visible">BAŞLAMAK İÇİN TIKLAYIN</div>
+    <div id="game-over-text" class="overlay-text">
+      <div class="remaining-time">
+        <span id="remaining-time-gameOver"></span>
+     </div>
+     <div class="total-clicks">
+       <span id="total-clicks-gameOver"></span>
+     </div>
+      KAYBETTİNİZ
+    
+    </div>
+    <div id="victory-text" class="overlay-text">
+      <div class="remaining-time">
+         <span id="remaining-time-victory"></span>
+      </div>
+      <div class="total-clicks">
+        <span id="total-clicks-victory"></span>
+      </div>
+      KAZANDINIZ
+    </div>
+
+    <div class="game-container">
+      <div class="game-info-container">
+        <div class="game-info">Süre: <span id="time-remaining">60</span></div>
+        <div class="game-info">Hamle: <span id="flips">0</span></div>
+      </div>
+
+      
+ <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value iw"
+            src="img/BalKabağı.png"
+          />
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value iw"
+            src="img/BalKabağı.png"
+          />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Göz.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Göz.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/El.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/El.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/hayalet.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/hayalet.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Rip.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Rip.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Azrail.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Azrail.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Bıçak.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Bıçak.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Kemik.png" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="spider" src="img/kart.jpg" />
+        </div>
+        <div class="card-front card-face">
+          <img class="card-value iw" src="img/Kemik.png" />
+        </div>
+      </div>
+
+     
+    </div>
+  </body>
+</html>
