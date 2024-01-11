@@ -1,36 +1,3 @@
-class AudioController {
-  constructor() {
-    this.bgMusic = new Audio("Assets/Audio/creepy.mp3");
-    this.flipSound = new Audio("Assets/Audio/flip.wav");
-    this.matchSound = new Audio("Assets/Audio/match.wav");
-    this.victorySound = new Audio("Assets/Audio/victory.wav");
-    this.gameOverSound = new Audio("Assets/Audio/gameOver.wav");
-    this.bgMusic.volume = 0.5;
-    this.bgMusic.loop = true;
-  }
-  startMusic() {
-    this.bgMusic.play();
-  }
-  stopMusic() {
-    this.bgMusic.pause();
-    this.bgMusic.currentTime = 0;
-  }
-  flip() {
-    this.flipSound.play();
-  }
-  match() {
-    this.matchSound.play();
-  }
-  victory() {
-    this.stopMusic();
-    this.victorySound.play();
-  }
-  gameOver() {
-    this.stopMusic();
-    this.gameOverSound.play();
-  }
-}
-
 class MixOrMatch {
   constructor(totalTime, cards) {
     this.cardsArray = cards;
@@ -38,7 +5,7 @@ class MixOrMatch {
     this.timeRemaining = totalTime;
     this.timer = document.getElementById("time-remaining");
     this.ticker = document.getElementById("flips");
-    this.audioController = new AudioController();
+ 
   }
 
   startGame() {
@@ -48,7 +15,7 @@ class MixOrMatch {
     this.matchedCards = [];
     this.busy = true;
     setTimeout(() => {
-      this.audioController.startMusic();
+    
       this.shuffleCards(this.cardsArray);
       this.countdown = this.startCountdown();
       this.busy = false;
@@ -66,7 +33,7 @@ class MixOrMatch {
   }
   gameOver() {
     clearInterval(this.countdown);
-    this.audioController.gameOver();
+
     document.getElementById("game-over-text").classList.add("visible");
     const gameOverText = document.getElementById("game-over-text");
 
@@ -79,7 +46,7 @@ class MixOrMatch {
   }
   victory() {
     clearInterval(this.countdown);
-    this.audioController.victory();
+   
     const victoryText = document.getElementById("victory-text");
     victoryText.classList.add("visible");
 
@@ -98,7 +65,7 @@ class MixOrMatch {
   }
   flipCard(card) {
     if (this.canFlipCard(card)) {
-      this.audioController.flip();
+  
       this.totalClicks++;
       this.ticker.innerText = this.totalClicks;
       card.classList.add("visible");
@@ -122,7 +89,7 @@ class MixOrMatch {
     this.matchedCards.push(card2);
     card1.classList.add("matched");
     card2.classList.add("matched");
-    this.audioController.match();
+
     if (this.matchedCards.length === this.cardsArray.length) this.victory();
   }
   cardMismatch(card1, card2) {
@@ -134,7 +101,7 @@ class MixOrMatch {
     }, 1000);
   }
   shuffleCards(cardsArray) {
-    
+    // Fisher-Yates Shuffle Algorithm.
     for (let i = cardsArray.length - 1; i > 0; i--) {
       let randIndex = Math.floor(Math.random() * (i + 1));
       cardsArray[randIndex].style.order = i;
@@ -162,7 +129,7 @@ if (document.readyState == "loading") {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
   let cards = Array.from(document.getElementsByClassName("card"));
-  let game = new MixOrMatch(45, cards);
+  let game = new MixOrMatch(40, cards);
 
   overlays.forEach((overlay) => {
     overlay.addEventListener("click", () => {
